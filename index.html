@@ -102,6 +102,85 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    let logButton = errorBtns[0];
+    logButton.addEventListener('click', e =>{
+      console.log('Console Log');
+    })
+    let errorButton = errorBtns[1];
+    errorButton.addEventListener('click', e =>{
+      console.error('Console Error');
+    })
+    let countButton = errorBtns[2];
+    countButton.addEventListener('click', e =>{
+      console.count();
+    })
+    let warnButton = errorBtns[3];
+    warnButton.addEventListener('click', e =>{
+      console.warn('Warning');
+    })
+    let assertButton = errorBtns[4];
+    assertButton.addEventListener('click', e =>{
+      const firstFruit = 'apple';
+      const secondFruit = 'pear'
+      const reason = 'firstFruit and secondFruit should be the same'
+      console.assert(firstFruit === secondFruit, {firstFruit, secondFruit, reason});
+    })
+    let clearButton = errorBtns[5];
+    clearButton.addEventListener('click', e =>{
+      console.clear();
+    })
+    let dirButton = errorBtns[6];
+    dirButton.addEventListener('click', e =>{
+      console.dir(document.head);
+    })
+    let dirxmlButton = errorBtns[7];
+    dirxmlButton.addEventListener('click', e =>{
+      console.dir(document);
+    })
+    const label = 'Group'
+    let gstartButton = errorBtns[8];
+    gstartButton.addEventListener('click', e =>{
+      console.group(label);
+    })
+    let gendButton = errorBtns[9];
+    gendButton.addEventListener('click', e =>{
+      console.groupEnd(label);
+    })
+    let tableButton = errorBtns[10];
+    tableButton.addEventListener('click', e =>{
+      console.table([
+        {
+          Number: 'Console Table 1',
+          Letter: 'A'
+        },
+        {
+          Number: 'Console Table 2',
+          Letter: 'B'
+        },
+      ]);
+    })
+    const labelTime = 'Timer'
+    let tstartButton = errorBtns[11];
+    tstartButton.addEventListener('click', e =>{
+      console.time(labelTime);
+    })
+    let tendButton = errorBtns[12];
+    tendButton.addEventListener('click', e =>{
+      console.timeEnd(labelTime);
+    })
+    let traceButton = errorBtns[13];
+    traceButton.addEventListener('click', e =>{
+      const one = () => { two(); };
+      const two = () => { three(); };
+      const three = () => {console.trace(); };
+    })
+    let globalButton = errorBtns[14];
+    globalButton.addEventListener('click', e =>{
+      
+    })
+
+    
+
   </script>
 </body>
 
