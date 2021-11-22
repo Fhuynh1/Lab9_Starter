@@ -84,8 +84,17 @@
       <button>End Timer</button>
       <button>Console Trace</button>
       <button>Trigger a Global Error</button>
+      <button>Throw Custom Error</button>
     </section>
   </main>
+
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<script>
+  window.TrackJS && TrackJS.install({ 
+    token: "b070428e3159428ba45f8fa15c993946"
+    // for more configuration options, see https://docs.trackjs.com
+  });
+</script>
 
   <script>
     let form = document.querySelector('form');
@@ -176,10 +185,26 @@
     })
     let globalButton = errorBtns[14];
     globalButton.addEventListener('click', e =>{
-      
+      apple =5;
     })
 
-    
+    try { notabutton.addEventListener('click', e =>{
+      console.log('hi');
+    })
+    } catch (error) {
+      console.error(error);
+      TrackJS.track(error);
+    }
+    finally{
+      console.log('finally');
+    }
+
+    let throwButton = errorBtns[15];
+    throwButton.addEventListener('click', e =>{
+      throw new Error("Oh no!");
+    })
+
+
 
   </script>
 </body>
